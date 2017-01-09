@@ -1,0 +1,36 @@
+---
+  layout: default
+---
+
+<!-- psuedo-grid, pseudo-masonry -->
+<section class="page-latest">
+
+  <!-- Masonry tiles -->
+  <div class="tiles">
+    <div class="tile-sizer"></div>
+
+    {% for tile in site.data.latest.tiles %}
+      {% include tile.html data=tile %}
+    {% endfor %}
+
+    <script src="{{base}}/assets/js/masonry.pkgd.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var $msn = $('.tiles').masonry({
+        columnWidth: '.tile-sizer',
+        itemSelector: '.comp-tile',
+        percentPosition: true,
+        transitionDuration: 0,
+      });
+      $(window).resize(function(){
+        $msn.masonry('layout');
+      });
+      $(document).ready(function(){
+        $msn.masonry('layout');
+        setTimeout( (function() {
+          $msn.masonry('layout');
+        }), 100);
+      });
+    </script>
+  </div>
+
+</section>

@@ -1,0 +1,215 @@
+.comp-tile {
+  display: block;
+  width: 50%;
+  // background-color: rgba(255, 255, 255, 0.1);
+  // border: 1px rgba(255, 255, 255, 0.4) solid;
+  overflow: hidden;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &.width-full  { width: 100%; }
+
+  .tile-outer {
+    position: relative;
+    height: 0;
+    padding-top: 75%;  // 4:3 aspect ratio
+
+    &.desktop-aspect-1-1  { padding-top: 100%; }
+    &.desktop-aspect-16-9 { padding-top: 56.25%; }
+    &.desktop-aspect-4-3  { padding-top: 75%; }
+
+    @include mobile {
+      &.mobile-aspect-1-1  { padding-top: 100%; }
+      &.mobile-aspect-16-9 { padding-top: 56.25%; }
+      &.mobile-aspect-4-3  { padding-top: 75%; }
+    }
+
+    &.tile-bg {
+      background-position: center center;
+      background-size: cover;
+    }
+
+    &.tile-style-black {
+      background-color: #000;
+      color: #fff;
+    }
+
+    &.tile-style-yellow {
+      background-color: #ffd107;
+      color: #000;
+
+      .tile-inner {
+        .tile-content {
+          p {
+            text-shadow: none;
+          }
+        }
+      }
+    }
+
+    .tile-inner {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      @mixin gradient-fade($colFrom, $colTo, $gradStart, $gradEnd) {
+        $_start: $colFrom $gradStart;
+        $_end: $colTo $gradEnd;
+        background: -webkit-linear-gradient(top,       $_start, $_end);
+        background:    -moz-linear-gradient(top,       $_start, $_end);
+        background:         linear-gradient(to bottom, $_start, $_end);
+        // filter: progid:DXImageTransform.Microsoft.gradient(
+        //   startColorstr='#a8000000', endColorstr='#00000000', GradientType=0);
+      }
+
+      &.tile-fade-grad-light {
+        @include gradient-fade(rgba(0,0,0,0.33), rgba(0,0,0,0), 0%, 33%);
+      }
+      &.tile-fade-grad-half {
+        @include gradient-fade(rgba(0,0,0,0.50), rgba(0,0,0,0), 0%, 33%);
+      }
+      &.tile-fade-grad,
+      &.tile-fade-grad-dark {
+        @include gradient-fade(rgba(0,0,0,0.66), rgba(0,0,0,0), 0%, 33%);
+      }
+      &.tile-fade-grad-max {
+        @include gradient-fade(rgba(0,0,0,0.80), rgba(0,0,0,0), 0%, 33%);
+      }
+
+      @include mobile {
+        &.tile-fade-grad-light {
+          @include gradient-fade(rgba(0,0,0,0.33), rgba(0,0,0,0), 0%, 100%);
+        }
+        &.tile-fade-grad-half {
+          @include gradient-fade(rgba(0,0,0,0.50), rgba(0,0,0,0), 0%, 100%);
+        }
+        &.tile-fade-grad,
+        &.tile-fade-grad-dark {
+          @include gradient-fade(rgba(0,0,0,0.66), rgba(0,0,0,0), 0%, 100%);
+        }
+        &.tile-fade-grad-max {
+          @include gradient-fade(rgba(0,0,0,0.80), rgba(0,0,0,0), 0%, 100%);
+        }
+      }
+
+      &.tile-fade-solid,
+      &.tile-fade-solid-light { background-color: rgba(0, 0, 0, 0.33); }
+      &.tile-fade-solid-half  { background-color: rgba(0, 0, 0, 0.50); }
+      &.tile-fade-solid-dark  { background-color: rgba(0, 0, 0, 0.66); }
+
+      .tile-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1000;
+
+        video {
+          width: 100%;
+          height: 100%;
+
+          @include mobile {
+            @include transform(scale(1.8));
+          }
+        }
+      }
+
+      .tile-content {
+        margin: 2.5vw;
+
+        p {
+          margin: 0;
+          line-height: 1.2em;
+          text-shadow: 1px 1px #000000;
+          text-shadow: 1px 1px rgba(0,0,0,0.33);
+          @include transition(none);
+
+          &.tile-heading { font-size: 1.75vw; min-height: 1.1em; }
+          &.tile-text    { font-size: 2.5vw; font-weight: bold; }
+
+          .tile-link-arrow {
+            display: inline-block;
+            padding-left: 20px;
+            font-weight: normal;
+            @include transform(scaley(1.5) scalex(0.75) translateY(-0.05em));
+          }
+        }
+
+        @include mobile {
+          margin: 5vw;
+
+          p {
+            &.tile-heading { font-size: 5.5vw; }
+            &.tile-text    { font-size: 7vw; }
+          }
+        }
+      }
+    }
+  }
+
+  &.promo {
+    .tile-outer {
+      .tile-inner {
+        display: table;
+        width: 100%;
+        height: 100%;
+
+        .tile-content {
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+
+          .promo-roller {
+            font-size: 35px;
+            font-size: 4vw;
+            line-height: 1em;
+            font-weight: bold;
+
+            text-shadow: 1px 1px #000000;
+            text-shadow: 1px 1px rgba(0,0,0,0.33);
+
+            .promo-left {
+              display: inline-block;
+              padding: 5px 5px;
+            }
+
+            .promo-middle {
+              display: inline-block;
+              background-color: #f3c34f;
+              padding: 5px 5px;
+              margin: 0 -1vw;
+            }
+
+            .promo-right {
+              display: inline-block;
+              padding: 5px 5px;
+            }
+          }
+
+          @include mobile {
+            text-align: left;
+
+            .promo-roller {
+              display: inline-block;
+              width: auto;
+              margin-left: 10vw;
+              font-size: 10vw;
+
+              .promo-left,
+              .promo-middle,
+              .promo-left {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

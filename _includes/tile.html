@@ -1,0 +1,64 @@
+{% if include.data.content.link %}
+<a
+{% else %}
+<div
+{% endif %} class="comp-tile
+  {% if include.data.type %}
+    {{ include.data.type }}
+  {% endif %}
+  {% if include.data.width %}
+    width-{{ include.data.width }}
+  {% endif %}
+">
+  <div class="tile-outer
+    {% if include.data.aspect %}
+      {% if include.data.aspect.mobile %}
+        mobile-aspect-{{ include.data.aspect.mobile }}
+      {% endif %}
+      {% if include.data.aspect.desktop %}
+        desktop-aspect-{{ include.data.aspect.desktop }}
+      {% endif %}
+    {% endif %}
+    {% if include.data.background %}
+      {% if include.data.background.style %}
+        tile-style-{{ include.data.background.style }}
+      {% endif %}
+      {% if include.data.background.image %}
+        tile-bg
+      {% endif %}
+    {% endif %}"
+    {% if include.data.background and include.data.background.image %}
+      style="background-image: url('../images/{{ include.data.background.image }}');"
+    {% endif %}>
+    <div class="tile-inner
+      {% if include.data.background and include.data.background.fade %}
+        tile-fade-{{ include.data.background.fade }}
+      {% endif %}">
+      {% if include.data.background and include.data.background.video %}
+      <div class="tile-background">
+        <video loop="" autoplay="" poster="../images/{{ include.data.background.image }}">
+          <source src="{{ include.data.background.video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {% endif %}
+      <div class="tile-content">
+        {% case include.data.type %}
+        {% when 'promo' %}
+        <div class="promo-roller">
+          <span class="promo-left">Feeling</span>
+          <span class="promo-middle">conquers</span>
+          <span class="promo-right">thinking.</span>
+        </div>
+        {% else %}
+        <p class="tile-heading">{{ include.data.content.heading }}</p>
+        <p class="tile-text">{{ include.data.content.text }}{% if include.data.content.link %}<span class="tile-link-arrow">&gt;</span>{% endif %}</p>
+        {% endcase %}
+      </div>
+    </div>
+  </div>
+{% if include.data.content.link %}
+</a>
+{% else %}
+</div>
+{% endif %}

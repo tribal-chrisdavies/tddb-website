@@ -1,0 +1,111 @@
+tiles:
+  - type: promo
+    width: full
+    aspect:
+      desktop: 16-9
+      mobile: 1-1
+    content:
+      spinners:
+        - l: Feeling
+          m: conquers
+          r: thinking
+    background:
+      image: latest/campaign-naked-ute.jpg
+      video: http://content.volkswagen-commercial.com.au/Amarok/Content/videos/VW_The_Naked_Reveal_Loop.mp4
+
+  - content:
+      heading: About Us
+      text: Building Teams to Solve Problems
+      link: www.google.com
+    background:
+      fade: solid
+      image: latest/about-us.jpg
+
+  - content:
+      heading: Technology
+      text: Prototypes over Presentations
+      link: www.google.com
+    background:
+      style: yellow
+
+  - content:
+      heading: Join our Team
+      text: Mobile is the first place to see our work
+      link: www.google.com
+    background:
+      style: black
+
+  - content:
+      heading: Latest Campaign
+      text: McDonald's Opportunity for People
+      link: www.google.com
+    background:
+      fade: solid
+      image: latest/campaign-mcdonalds-latest.jpg
+
+  - width: full
+    aspect:
+      desktop: 16-9
+      # mobile: 4-3
+    content:
+      heading: The Sydney Opera House
+      text: We needed to get more people inside the Sydney Opera House during summer time.
+      pos:
+        x: 0
+        y: 0.5
+    background:
+      fade: grad
+      image: latest/campaign-operahouse.jpg
+
+  - content:
+      heading: "Culture"
+      text: Building Teams to Solve Problems
+      link: www.google.com
+    background:
+      fade: solid
+      image: latest/building-teams.jpg
+
+  - content:
+      heading: Technology
+      text: Prototypes over Presentations
+    background:
+      style: black
+
+  - width: full
+    aspect:
+      desktop: 16-9
+    content:
+      heading: McDonald's
+      text: A challenge to convert the McDonald's cynics.
+      pos:
+        x: 0
+        y: 0.5
+    background:
+      fade: grad-light
+      image: latest/campaign-mcdonalds.jpg
+
+  - content:
+      heading: " "
+      text: Building Teams to Solve Problems
+      link: www.google.com
+    background:
+      style: black
+
+  - content:
+      heading: Technology
+      text: Prototypes over Presentations
+    background:
+      style: yellow
+
+  - width: full
+    aspect:
+      desktop: 16-9
+    content:
+      heading: Volkswagon
+      text: Can we sell a Golf to a town that doesn't need it's city technology?
+      pos:
+        x: 0
+        y: 0.15
+    background:
+      fade: grad
+      image: latest/campaign-volkswagen.jpg
