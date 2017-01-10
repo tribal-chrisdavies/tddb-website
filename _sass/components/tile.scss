@@ -180,7 +180,9 @@
 
           .tile-link-arrow {
             display: inline-block;
-            padding-left: 20px;
+            font-size: inherit;
+            text-shadow: none;
+            padding-left: 15px;
             font-weight: normal;
             @include transform(scaley(1.5) scalex(0.75) translateY(-0.05em));
           }
