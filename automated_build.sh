@@ -1,9 +1,12 @@
-bundle exec jekyll contentful
-bundle exec jekyll build
+bundle exec jekyll contentful --build
 
 git config --global user.email "chris.lim-davies@au.tribalworldwide.com"
-git config --global user.name "Chris Davies"
+git config --global user.name "Chris Davies (CircleCI)"
 
+git checkout gh-pages
 git add .
-git commit -m "Automated Rebuild"
-git push -f origin master
+
+CURDATE="$(date +'%T (%d/%m/%Y)')"
+git commit -m "Automated rebuild at $CURDATE."
+
+git push -f origin gh-pages
