@@ -14,7 +14,6 @@
   a:hover,
   a:active,
   a:visited {
-    // color: white;
     text-decoration: none;
     cursor: pointer;
 
@@ -25,7 +24,7 @@
 
   a:hover {
     .tile-outer {
-      // Disabled because mobile has sticky hover
+      // // Disabled because mobile has sticky hover
       // @include transform(scale($tile-scale-hover));
     }
   }
@@ -41,7 +40,7 @@
 
   .tile-comp {
     .tile-outer {
-      @include transform(scale($tile-scale-norm) translate3d(0,0,0));
+      @include transform(scale($tile-scale-norm) translate3d(0, 0, 0));
     }
   }
 }

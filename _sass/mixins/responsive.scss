@@ -11,9 +11,3 @@ $desktop-min-width: 768px;
     @content;
   }
 }
-
-@mixin widescreen {
-  @media screen and (min-width: 1400px) {
-    @content;
-  }
-}

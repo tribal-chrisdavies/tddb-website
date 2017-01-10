@@ -1,8 +1,12 @@
 .comp-tile {
+  $promo-box-col: #f3c34f;
+  $style-black-bg-col: #000;
+  $style-black-text-col: #fff;
+  $style-yellow-bg-col: #ffd107;
+  $style-yellow-text-col: #000;
+
   display: block;
   width: 50%;
-  // background-color: rgba(255, 255, 255, 0.1);
-  // border: 1px rgba(255, 255, 255, 0.4) solid;
   overflow: hidden;
 
   @include mobile {
@@ -21,9 +25,13 @@
     &.desktop-aspect-4-3  { padding-top: 75%; }
 
     @include mobile {
-      &.mobile-aspect-1-1  { padding-top: 100%; }
-      &.mobile-aspect-16-9 { padding-top: 56.25%; }
-      &.mobile-aspect-4-3  { padding-top: 75%; }
+      // In mobile view, reset desktop aspects
+      &.desktop-aspect-1-1  { padding-top: 75%; }
+      &.desktop-aspect-16-9 { padding-top: 75%; }
+      &.desktop-aspect-4-3  { padding-top: 75%; }
+      &.mobile-aspect-1-1   { padding-top: 100%; }
+      &.mobile-aspect-16-9  { padding-top: 56.25%; }
+      &.mobile-aspect-4-3   { padding-top: 75%; }
     }
 
     &.tile-bg {
@@ -32,13 +40,13 @@
     }
 
     &.tile-style-black {
-      background-color: #000;
-      color: #fff;
+      background-color: $style-black-bg-col;
+      color: $style-black-text-col;
     }
 
     &.tile-style-yellow {
-      background-color: #ffd107;
-      color: #000;
+      background-color: $style-yellow-bg-col;
+      color: $style-yellow-text-col;
 
       .tile-inner {
         .tile-content {
@@ -56,9 +64,9 @@
       top: 0;
       bottom: 0;
 
-      @mixin gradient-fade($colFrom, $colTo, $gradStart, $gradEnd) {
-        $_start: $colFrom $gradStart;
-        $_end: $colTo $gradEnd;
+      @mixin gradient-fade($col-from, $col-to, $grad-start, $grad-end) {
+        $_start: $col-from $grad-start;
+        $_end: $col-to $grad-end;
         background: -webkit-linear-gradient(top,       $_start, $_end);
         background:    -moz-linear-gradient(top,       $_start, $_end);
         background:         linear-gradient(to bottom, $_start, $_end);
@@ -66,40 +74,70 @@
         //   startColorstr='#a8000000', endColorstr='#00000000', GradientType=0);
       }
 
+      &.tile-fade-grad-lightest {
+        @include gradient-fade(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0), 0%, 33%);
+      }
+
       &.tile-fade-grad-light {
-        @include gradient-fade(rgba(0,0,0,0.33), rgba(0,0,0,0), 0%, 33%);
+        @include gradient-fade(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0), 0%, 33%);
       }
+
       &.tile-fade-grad-half {
-        @include gradient-fade(rgba(0,0,0,0.50), rgba(0,0,0,0), 0%, 33%);
+        @include gradient-fade(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0), 0%, 33%);
       }
+
       &.tile-fade-grad,
       &.tile-fade-grad-dark {
-        @include gradient-fade(rgba(0,0,0,0.66), rgba(0,0,0,0), 0%, 33%);
+        @include gradient-fade(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0), 0%, 33%);
       }
-      &.tile-fade-grad-max {
-        @include gradient-fade(rgba(0,0,0,0.80), rgba(0,0,0,0), 0%, 33%);
+
+      &.tile-fade-grad-darkest {
+        @include gradient-fade(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0), 0%, 33%);
       }
 
       @include mobile {
+        &.tile-fade-grad-lightest {
+          @include gradient-fade(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0), 0%, 100%);
+        }
+
         &.tile-fade-grad-light {
-          @include gradient-fade(rgba(0,0,0,0.33), rgba(0,0,0,0), 0%, 100%);
+          @include gradient-fade(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0), 0%, 100%);
         }
+
         &.tile-fade-grad-half {
-          @include gradient-fade(rgba(0,0,0,0.50), rgba(0,0,0,0), 0%, 100%);
+          @include gradient-fade(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0), 0%, 100%);
         }
+
         &.tile-fade-grad,
         &.tile-fade-grad-dark {
-          @include gradient-fade(rgba(0,0,0,0.66), rgba(0,0,0,0), 0%, 100%);
+          @include gradient-fade(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0), 0%, 100%);
         }
-        &.tile-fade-grad-max {
-          @include gradient-fade(rgba(0,0,0,0.80), rgba(0,0,0,0), 0%, 100%);
+
+        &.tile-fade-grad-darkest {
+          @include gradient-fade(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0), 0%, 100%);
         }
       }
 
       &.tile-fade-solid,
-      &.tile-fade-solid-light { background-color: rgba(0, 0, 0, 0.33); }
-      &.tile-fade-solid-half  { background-color: rgba(0, 0, 0, 0.50); }
-      &.tile-fade-solid-dark  { background-color: rgba(0, 0, 0, 0.66); }
+      &.tile-fade-solid-lightest {
+        background-color: rgba(0, 0, 0, 0.20);
+      }
+
+      &.tile-fade-solid-light    {
+        background-color: rgba(0, 0, 0, 0.33);
+      }
+
+      &.tile-fade-solid-half     {
+        background-color: rgba(0, 0, 0, 0.50);
+      }
+
+      &.tile-fade-solid-dark     {
+        background-color: rgba(0, 0, 0, 0.66);
+      }
+
+      &.tile-fade-solid-darkest  {
+        background-color: rgba(0, 0, 0, 0.80);
+      }
 
       .tile-background {
         position: absolute;
@@ -108,7 +146,7 @@
         top: 0;
         left: 0;
         overflow: hidden;
-        z-index: -1000;
+        z-index: 1;
 
         video {
           width: 100%;
@@ -121,17 +159,24 @@
       }
 
       .tile-content {
+        position: relative;
+        z-index: 2;
+
         margin: 2.5vw;
 
         p {
           margin: 0;
           line-height: 1.2em;
-          text-shadow: 1px 1px #000000;
-          text-shadow: 1px 1px rgba(0,0,0,0.33);
-          @include transition(none);
 
-          &.tile-heading { font-size: 1.75vw; min-height: 1.1em; }
-          &.tile-text    { font-size: 2.5vw; font-weight: bold; }
+          &.tile-heading {
+            font-size: 1.75vw;
+            min-height: 1.1em;
+          }
+
+          &.tile-text {
+            font-size: 2.5vw;
+            font-weight: bold;
+          }
 
           .tile-link-arrow {
             display: inline-block;
@@ -166,29 +211,19 @@
           text-align: center;
 
           .promo-roller {
-            font-size: 35px;
-            font-size: 4vw;
-            line-height: 1em;
-            font-weight: bold;
-
-            text-shadow: 1px 1px #000000;
-            text-shadow: 1px 1px rgba(0,0,0,0.33);
-
-            .promo-left {
+            .promo-left,
+            .promo-middle,
+            .promo-right {
               display: inline-block;
-              padding: 5px 5px;
+              font-size: 4vw;
+              line-height: 1em;
+              font-weight: bold;
+              padding: 5px;
             }
 
             .promo-middle {
-              display: inline-block;
-              background-color: #f3c34f;
-              padding: 5px 5px;
+              background-color: $promo-box-col;
               margin: 0 -1vw;
-            }
-
-            .promo-right {
-              display: inline-block;
-              padding: 5px 5px;
             }
           }
 
@@ -197,13 +232,13 @@
 
             .promo-roller {
               display: inline-block;
-              width: auto;
-              margin-left: 10vw;
-              font-size: 10vw;
 
               .promo-left,
               .promo-middle,
-              .promo-left {
+              .promo-right {
+                width: auto;
+                margin-left: 10vw;
+                font-size: 10vw;
                 display: block;
               }
             }

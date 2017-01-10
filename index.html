@@ -9,7 +9,8 @@
   <div class="tiles">
     <div class="tile-sizer"></div>
 
-    {% for tile in site.data.latest.tiles %}
+    {% assign tiles = site.data.contentful.newsTile | sort: 'order_id' %}
+    {% for tile in tiles %}
       {% include tile.html data=tile %}
     {% endfor %}
 

@@ -1,4 +1,4 @@
-{% if include.data.content.link %}
+{% if include.data.content_link %}
 <a
 {% else %}
 <div
@@ -11,33 +11,31 @@
   {% endif %}
 ">
   <div class="tile-outer
-    {% if include.data.aspect %}
-      {% if include.data.aspect.mobile %}
-        mobile-aspect-{{ include.data.aspect.mobile }}
-      {% endif %}
-      {% if include.data.aspect.desktop %}
-        desktop-aspect-{{ include.data.aspect.desktop }}
-      {% endif %}
+    {% if include.data.aspect_mobile %}
+      mobile-aspect-{{ include.data.aspect_mobile }}
     {% endif %}
-    {% if include.data.background %}
-      {% if include.data.background.style %}
-        tile-style-{{ include.data.background.style }}
-      {% endif %}
-      {% if include.data.background.image %}
-        tile-bg
-      {% endif %}
-    {% endif %}"
-    {% if include.data.background and include.data.background.image %}
-      style="background-image: url('../images/{{ include.data.background.image }}');"
-    {% endif %}>
+    {% if include.data.aspect_desktop %}
+      desktop-aspect-{{ include.data.aspect_desktop }}
+    {% endif %}
+    {% if include.data.background_style %}
+      tile-style-{{ include.data.background_style }}
+    {% endif %}
+    {% if include.data.background_image %}
+      tile-bg
+    {% endif %}
+    "
+    {% if include.data.background_image %}
+      style="background-image: url('https://{{ include.data.background_image.url }}');"
+    {% endif %}
+    >
     <div class="tile-inner
-      {% if include.data.background and include.data.background.fade %}
-        tile-fade-{{ include.data.background.fade }}
+      {% if include.data.background_fade %}
+        tile-fade-{{ include.data.background_fade }}
       {% endif %}">
-      {% if include.data.background and include.data.background.video %}
+      {% if include.data.background_video %}
       <div class="tile-background">
-        <video loop="" autoplay="" poster="../images/{{ include.data.background.image }}">
-          <source src="{{ include.data.background.video }}" type="video/mp4">
+        <video loop="" autoplay=""{% if include.data.background_video_poster %} poster="https://{{ include.data.background_video_poster }}"{% endif %}>
+          <source src="{{ include.data.background_video }}" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -51,13 +49,13 @@
           <span class="promo-right">thinking.</span>
         </div>
         {% else %}
-        <p class="tile-heading">{{ include.data.content.heading }}</p>
-        <p class="tile-text">{{ include.data.content.text }}{% if include.data.content.link %}<span class="tile-link-arrow">&gt;</span>{% endif %}</p>
+        <p class="tile-heading">{{ include.data.content_heading }}</p>
+        <p class="tile-text">{{ include.data.content_text }}{% if include.data.content_link %}<span class="tile-link-arrow">&gt;</span>{% endif %}</p>
         {% endcase %}
       </div>
     </div>
   </div>
-{% if include.data.content.link %}
+{% if include.data.content_link %}
 </a>
 {% else %}
 </div>
