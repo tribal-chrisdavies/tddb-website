@@ -28,9 +28,12 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor/
+  - automated_build.sh
+  - circle.yml
 contentful:
   spaces:
     - contentful:
-        space: ffayqc5v7rj1
-        access_token: 40cafc166d85dda4236e2a8e4f7350384a02a49bee89ca9c5f56ee274e9154c4
-        destination: /
+      space: ffayqc5v7rj1
+      access_token: 40cafc166d85dda4236e2a8e4f7350384a02a49bee89ca9c5f56ee274e9154c4
+      destination: /
