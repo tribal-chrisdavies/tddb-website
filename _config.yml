@@ -31,6 +31,7 @@ exclude:
   - vendor/
   - automated_build.sh
   - circle.yml
+  - .ruby-version
 contentful:
   spaces:
     - contentful:
