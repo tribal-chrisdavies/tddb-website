@@ -11,3 +11,7 @@ checkout:
 test:
   override:
     - echo "Intentionally overriding tests with an echo."
+general:
+  branches:
+    only:
+      - master
