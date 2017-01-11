@@ -8,3 +8,6 @@ checkout:
   post:
     - bundle install
     - bash automated_build.sh
+test:
+  override:
+    - echo "Ignoring tests."

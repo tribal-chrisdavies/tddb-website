@@ -5,6 +5,6 @@ bundle exec jekyll contentful --rebuild --trace
 git add .
 
 CURDATE=$(TZ=":Australia/Sydney" date +'%r (%d-%m-%Y, %Z)')
-git commit -m "Automated rebuild at $CURDATE."
+git commit -m "Automated CircleCI rebuild at $CURDATE."
 
 git push -f origin master

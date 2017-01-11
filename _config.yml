@@ -35,6 +35,6 @@ exclude:
 contentful:
   spaces:
     - contentful:
-        space: ffayqc5v7rj1
-        access_token: 40cafc166d85dda4236e2a8e4f7350384a02a49bee89ca9c5f56ee274e9154c4
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
         destination: /
