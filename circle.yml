@@ -10,4 +10,4 @@ checkout:
     - bash automated_build.sh
 test:
   override:
-    - echo "Ignoring tests."
+    - echo "Override tests with an echo."

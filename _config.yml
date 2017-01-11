@@ -35,6 +35,6 @@ exclude:
 contentful:
   spaces:
     - contentful:
-        space: ENV_CONTENTFUL_SPACE_ID
-        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
+        space: ENV_CONT_SPACE_ID
+        access_token: ENV_CONT_ACCESS_TOKEN
         destination: /

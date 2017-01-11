@@ -1,3 +1,6 @@
+export CONT_ACCESS_TOKEN=${CONT_ACCESS_TOKEN}
+export CONT_SPACE_ID=${CONT_SPACE_ID}
+
 git config --global user.email "chris.lim-davies@au.tribalworldwide.com"
 git config --global user.name "Chris Davies (CircleCI)"
 
