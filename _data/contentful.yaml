@@ -65,16 +65,6 @@ newsTile:
   aspect_mobile: 16-9
   background_style: yellow
 - sys:
-    id: 28twvvIjNyS46qkeoIkwE2
-  order_id: 14
-  type: basic
-  content_heading: Automatic Building Milestone 2
-  content_text: This represents the second automatic build of the website
-  width: full
-  aspect_desktop: 16-9
-  aspect_mobile: 16-9
-  background_style: black
-- sys:
     id: 4uaQDHLJpei0uMWoMI6ACO
   order_id: 6
   type: basic
@@ -101,6 +91,16 @@ newsTile:
   type: basic
   content_heading: Technology
   content_text: Prototypes over Presentations
+  background_style: black
+- sys:
+    id: 28twvvIjNyS46qkeoIkwE2
+  order_id: 14
+  type: basic
+  content_heading: Automatic Building Milestone 2
+  content_text: This represents the second automatic build of the website
+  width: half
+  aspect_desktop: 1-1
+  aspect_mobile: 16-9
   background_style: black
 - sys:
     id: 35gMo87PssKAO2WI8wGuq8
