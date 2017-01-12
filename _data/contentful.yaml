@@ -55,6 +55,16 @@ newsTile:
   content_text: Prototypes over Presentations
   background_style: yellow
 - sys:
+    id: 5zL5hhymSQ4YqkKO2SyK0m
+  order_id: 13
+  type: basic
+  content_heading: Automatic Building Milestone 1
+  content_text: This represents the first automatic build of the website
+  width: half
+  aspect_desktop: 16-9
+  aspect_mobile: 16-9
+  background_style: yellow
+- sys:
     id: 28twvvIjNyS46qkeoIkwE2
   order_id: 14
   type: basic
@@ -78,16 +88,6 @@ newsTile:
     title: Latest - Opera House
     description: 
     url: "//images.contentful.com/ffayqc5v7rj1/HFu87YjYkKOOeK0KE06U4/1e3a47543e6bbac36966db12afcaa66e/campaign-operahouse.jpg"
-- sys:
-    id: 5zL5hhymSQ4YqkKO2SyK0m
-  order_id: 13
-  type: basic
-  content_heading: Automatic Building Milestone 1
-  content_text: This represents the first automatic build of the website
-  width: full
-  aspect_desktop: 16-9
-  aspect_mobile: 16-9
-  background_style: yellow
 - sys:
     id: cGdXwl0afCo86mUeqCsic
   order_id: 3
