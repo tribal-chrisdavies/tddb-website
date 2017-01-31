@@ -22,9 +22,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
-# theme: minima
 gems:
-  # - jekyll-feed
+  # - jekyll-prismic
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -33,9 +32,3 @@ exclude:
   - circle.yml
   - .ruby-version
   - readme.md
-contentful:
-  spaces:
-    - contentful:
-        space: ENV_CONT_SPACE_ID
-        access_token: ENV_CONT_ACCESS_TOKEN
-        destination: /

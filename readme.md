@@ -26,6 +26,7 @@ Everything else should work fine.
 
 ## Dev Cycle
 
+- Use **ruby data_importer.rb** to GET content data from Prismic.io
 - Use **bundle exec jekyll serve** to start a localhost watcher and server. This can be accessed at **http://127.0.0.1:4000/**
 - Use **bundle exec jekyll contentful** to manually pull down JSON data from Contentful
 
