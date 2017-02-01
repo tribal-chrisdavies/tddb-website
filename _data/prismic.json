@@ -16,7 +16,41 @@
       "uid": "page-case-studies"
     }
   ],
+  "test-page": [
+    {
+      "fragments": {
+        "body": null,
+        "title": null
+      },
+      "uid": "test-page"
+    }
+  ],
   "case-study": [
+    {
+      "fragments": {
+        "page-title": "Case Study: Volkswagen",
+        "page-description": "Volkswagen case studies",
+        "tiles": [
+          {
+            "title": "Volkswagen",
+            "text": "Look it's VW!!",
+            "width": "full",
+            "aspect-mobile": "16-9",
+            "aspect-desktop": "16-9"
+          },
+          {
+            "text": "Everyone wants a Volkswagen, right?",
+            "width": "full",
+            "aspect-mobile": "16-9",
+            "aspect-desktop": "16-9"
+          },
+          {
+            "text": "I love Volkswagen"
+          }
+        ]
+      },
+      "uid": "case-study-volkswagen"
+    },
     {
       "fragments": {
         "page-title": "Case Study: McDonald's",

@@ -64,10 +64,10 @@ class DataImporter
           :uid => document.uid
         }
 
-        if defined? res[document.type]
+        if not res.key?(document.type)
           res[document.type] = []
         end
-        res[document.type].push( doc )
+        res[document.type] << doc
 
         # File.open("./_data/prismic/"+document.uid+".json", "w") do |f|
         #   f.write( JSON.pretty_generate(doc) )
