@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'prismic'
+require 'net/http'
 require 'json'
 require 'time'  # json parsing????
 
@@ -7,22 +8,11 @@ class DataImporter
   def self.import()
     # Import data from Prismic.io using:
     # https://github.com/prismicio/ruby-kit
-    puts ">> I'm gonna do stuff!"
+    puts "\n>> Starting Prismic.io data importer..."
 
     # Generate configuration settings
     config = JSON.parse('{
-      "endpoint": "https://tddb-website.prismic.io/api",
-      "links": {
-        "case-studies": {
-          "permalink": "/pages/:slug-:id/"
-        }
-      },
-      "collections": {
-        "case-studies": {
-          "permalink": "/pages/:slug-:id/",
-          "layout": "default.html"
-        }
-      }
+      "endpoint": "https://tddb-website.prismic.io/api"
     }')
 
     # Create Prismic API object
@@ -31,94 +21,75 @@ class DataImporter
       :cache => ::Prismic::BasicNullCache.new
     })
 
-    # Get all data from Prismic
+    # Get raw data from Prismic.io
     begin
-      puts ">> Trying to get data..."
-      # @prismic_ref ||= prismic.refs[@config['prismic']['ref']] || prismic.master_ref
-      response = @prismic_api.form('everything')
-        .query()
-        .submit(@prismic_api.master_ref)
+      url = "https://tddb-website.prismic.io/api/documents/search?ref=#{@prismic_api.master_ref.ref}&format=json"
+      puts ">> Querying '#{url}'..."
+      uri = URI(url)
+      response = Net::HTTP.get(uri)
+      resp = JSON.parse(response)
 
-      puts ">> Got some data:\n\n"
-      puts "\n>> response.results: ("+response.results.length.to_s+")\n\n"
-      puts response.results
-      puts "\n"
+      # Print raw data
+      File.open("./_data/_prismic.json", "w") do |f|
+        f.write( JSON.pretty_generate(resp) )
+      end
 
-      # File.open("./_data/prismic.json", "w") do |f|
-      #   f.write( ::Prismic::JsonParser.response_parser(response) )
-      # end
-
-      res = {}
-      response.results.each do |document|
-        puts "\n>> document '"+document.type+"':'"+document.uid+"':\n\n"
-
+      # Format data and write it into prismic.json
+      docs = {}
+      resp["results"].each do |result|
         doc = {
-          # :first_publication_date => document.first_publication_date,
-          :fragments => extractFragments(document.fragments),
-          # :href => document.href,
-          # :id => document.id,
-          # :last_publication_date => document.last_publication_date,
-          # :slugs => document.slugs,
-          # :tags => document.tags,
-          # :type => document.type,
-          :uid => document.uid
+          :uid => result["uid"],
+          # :data => result["data"][result["type"]]
         }
 
-        if not res.key?(document.type)
-          res[document.type] = []
-        end
-        res[document.type] << doc
+        frags = extractFragments(result["data"][result["type"]])
+        doc["data"] = frags
 
-        # File.open("./_data/prismic/"+document.uid+".json", "w") do |f|
-        #   f.write( JSON.pretty_generate(doc) )
-        # end
+        if not docs.key?(result["type"])
+          docs[result["type"]] = []
+        end
+        docs[result["type"]] << doc
       end
 
       File.open("./_data/prismic.json", "w") do |f|
-        f.write( JSON.pretty_generate(res) )
+        f.write( JSON.pretty_generate(docs) )
       end
 
-      response.results.first
-    rescue ::Prismic::SearchForm::FormSearchException
-      puts ">> Didn't get any data!!"
-      nil
+      puts ">> Got some data!  (#{resp["results"].length} pages)\n\n"
+      return resp["results"]
+    rescue => e
+      puts ">> Failed to get data!!"
+      puts "\n>> ERROR: \n#{e}\n\n"
+      return nil
     end
+
+    return nil
   end
 
+  # Parse hash table of fragments
   def self.extractFragments(fragments)
-    frag = {}
-    fragments.each do |name, fragment|
-      frag[name] = extractFragment(fragment)
-    end
-    return frag
-  end
-
-  def self.extractFragment(fragment)
-    if fragment.is_a?(::Prismic::Fragments::Text)
-      return fragment.value
-    elsif fragment.is_a?(::Prismic::Fragments::Image)
-      return {
-        :alt => fragment.main.alt,
-        :copyright => fragment.main.copyright,
-        :height => fragment.main.height,
-        :link_to => fragment.main.link_to,
-        :url => fragment.main.url,
-        :width => fragment.main.width
-      }
-    elsif fragment.is_a?(::Prismic::Fragments::Group)
-      docs = []
-      fragment.each do |groupDocument|
-        docs.push( extractFragment(groupDocument) )
+    list = {}
+    fragments.each do |name, value|
+      if value["type"] != "SliceZone"
+        list[name] = {
+          :type => value["type"],
+          :value => value["value"]
+        }
+      else
+        arr = []
+        value["value"].each do |val|
+          arr << {
+            :type => val["slice_type"],
+            :value => val["value"]["value"]
+          }
+        end
+        list[name] = {
+          :type => "SectionList",
+          :value => arr
+        }
       end
-      return docs
-    elsif fragment.is_a?(::Prismic::Fragments::GroupDocument)
-      return extractFragments(fragment)
     end
-    val = nil
-    if defined? fragment.value
-      val = fragment.value
-    end
-    return val
+    return list
   end
 end
 

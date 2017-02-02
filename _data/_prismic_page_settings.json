@@ -1,0 +1,199 @@
+{
+  "Metadata" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "placeholder" : "unique-identifier-for-page-url"
+      }
+    },
+    "title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Title",
+        "placeholder" : "Page title"
+      }
+    },
+    "description" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Description",
+        "placeholder" : "Page description"
+      }
+    },
+    "header" : {
+      "type" : "Select",
+      "config" : {
+        "label" : "Header Visibility",
+        "placeholder" : "shown",
+        "options" : [ "hidden" ]
+      }
+    },
+    "footer" : {
+      "type" : "Select",
+      "config" : {
+        "label" : "Footer Visibility",
+        "placeholder" : "shown",
+        "options" : [ "hidden" ]
+      }
+    }
+  },
+  "Content" : {
+    "sections" : {
+      "fieldset" : "Sections",
+      "type" : "Slices",
+      "config" : {
+        "choices" : {
+          "promo" : {
+            "type" : "Group",
+            "config" : {
+              "label" : "Promo section",
+              "repeat" : false,
+              "fields" : {
+                "heading" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Promo Heading",
+                    "placeholder" : "Promo heading"
+                  }
+                },
+                "background-video" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "Promo Background Video"
+                  }
+                },
+                "background-image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "label" : "Promo Background Image",
+                    "constraint" : {
+                      "width" : null,
+                      "height" : null
+                    },
+                    "thumbnails" : [ ]
+                  }
+                }
+              }
+            }
+          },
+          "tiles" : {
+            "type" : "Group",
+            "config" : {
+              "label" : "Tile section",
+              "repeat" : true,
+              "fields" : {
+                "title" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Content: Title",
+                    "placeholder" : "Tile heading"
+                  }
+                },
+                "text" : {
+                  "type" : "Text",
+                  "config" : {
+                    "label" : "Content: Text",
+                    "placeholder" : "Tile text"
+                  }
+                },
+                "text-align" : {
+                  "type" : "Select",
+                  "config" : {
+                    "label" : "Content: Alignment",
+                    "placeholder" : "left",
+                    "options" : [ "center", "right" ]
+                  }
+                },
+                "text-position" : {
+                  "type" : "Select",
+                  "config" : {
+                    "label" : "Content: Position",
+                    "placeholder" : "top-left",
+                    "options" : [ "top-center", "top-right", "mid-left", "mid-center", "mid-right", "bot-left", "bot-center", "bot-right" ]
+                  }
+                },
+                "text-width" : {
+                  "type" : "Select",
+                  "config" : {
+                    "label" : "Content: Width",
+                    "placeholder" : "full",
+                    "options" : [ "two-thirds", "half", "one-third" ]
+                  }
+                },
+                "text-horizontal-padding" : {
+                  "type" : "Number",
+                  "config" : {
+                    "label" : "Content: Horizontal Padding (percent of tile width)"
+                  }
+                },
+                "text-vertical-padding" : {
+                  "type" : "Number",
+                  "config" : {
+                    "label" : "Content: Vertical Padding (percent of tile height)"
+                  }
+                },
+                "link" : {
+                  "type" : "Link",
+                  "config" : {
+                    "label" : "Tile: Link"
+                  }
+                },
+                "width" : {
+                  "type" : "Select",
+                  "config" : {
+                    "label" : "Tile: Width",
+                    "placeholder" : "full",
+                    "options" : [ "half" ]
+                  }
+                },
+                "aspect-mobile" : {
+                  "type" : "Select",
+                  "config" : {
+                    "label" : "Tile: Aspect Ratio (Mobile)",
+                    "placeholder" : "4-3",
+                    "options" : [ "16-9", "1-1", "2-3", "fullscreen" ]
+                  }
+                },
+                "aspect-desktop" : {
+                  "type" : "Select",
+                  "config" : {
+                    "label" : "Tile: Aspect Ratio (Desktop)",
+                    "placeholder" : "4-3",
+                    "options" : [ "16-9", "1-1", "2-3", "fullscreen" ]
+                  }
+                },
+                "background-image" : {
+                  "type" : "Image",
+                  "config" : {
+                    "label" : "Tile: Background Image",
+                    "constraint" : {
+                      "width" : null,
+                      "height" : null
+                    },
+                    "thumbnails" : [ ]
+                  }
+                },
+                "background-fade" : {
+                  "type" : "Select",
+                  "config" : {
+                    "label" : "Tile: Background Fade",
+                    "placeholder" : "No fade",
+                    "options" : [ "solid", "grad" ]
+                  }
+                },
+                "background-style" : {
+                  "type" : "Select",
+                  "config" : {
+                    "label" : "Tile: Background Style",
+                    "placeholder" : "Default style",
+                    "options" : [ "black", "yellow" ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

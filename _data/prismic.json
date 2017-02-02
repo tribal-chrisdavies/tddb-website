@@ -1,119 +1,102 @@
 {
-  "case-study-page": [
+  "page-latest": [
     {
-      "fragments": {
-        "page-title": "Page: Case Studies",
-        "page-description": "List of case studies",
-        "tiles": [
-          {
-            "title": "Case Studies page",
-            "width": "full",
-            "aspect-mobile": "16-9",
-            "aspect-desktop": "16-9"
-          }
-        ]
-      },
-      "uid": "page-case-studies"
-    }
-  ],
-  "test-page": [
-    {
-      "fragments": {
-        "body": null,
-        "title": null
-      },
-      "uid": "test-page"
-    }
-  ],
-  "case-study": [
-    {
-      "fragments": {
-        "page-title": "Case Study: Volkswagen",
-        "page-description": "Volkswagen case studies",
-        "tiles": [
-          {
-            "title": "Volkswagen",
-            "text": "Look it's VW!!",
-            "width": "full",
-            "aspect-mobile": "16-9",
-            "aspect-desktop": "16-9"
-          },
-          {
-            "text": "Everyone wants a Volkswagen, right?",
-            "width": "full",
-            "aspect-mobile": "16-9",
-            "aspect-desktop": "16-9"
-          },
-          {
-            "text": "I love Volkswagen"
-          }
-        ]
-      },
-      "uid": "case-study-volkswagen"
-    },
-    {
-      "fragments": {
-        "page-title": "Case Study: McDonald's",
-        "page-description": "Case study on McDonald's.",
-        "tiles": [
-          {
-            "title": "McDonald's",
-            "text": "Look at all this wonderful McDonald's stuff!",
-            "width": "full"
-          }
-        ]
-      },
-      "uid": "case-study-mcdonalds"
-    }
-  ],
-  "latest-page": [
-    {
-      "fragments": {
-        "page-title": "Page: Latest",
-        "page-description": "The latest page.",
-        "tiles": [
-          {
-            "title": "Promo",
-            "type": "promo",
-            "background-image": {
-              "alt": null,
-              "copyright": null,
-              "height": 280,
-              "link_to": null,
-              "url": "https://prismic-io.s3.amazonaws.com/tddb-website/3c08c85ffcb8eac361e02c0b597dd5216c804a95_auazfff.png",
-              "width": 280
+      "uid": "latest",
+      "data": {
+        "title": {
+          "type": "Text",
+          "value": "Latest from Tribal DDB Sydney"
+        },
+        "description": {
+          "type": "Text",
+          "value": "Everything from Tribal DDB Sydney."
+        },
+        "sections": {
+          "type": "SectionList",
+          "value": [
+            {
+              "type": "promo",
+              "value": [
+                {
+                  "heading": {
+                    "type": "Text",
+                    "value": "Thinking is DURR"
+                  },
+                  "background-image": {
+                    "type": "Image",
+                    "value": {
+                      "main": {
+                        "dimensions": {
+                          "width": 280,
+                          "height": 280
+                        },
+                        "alt": null,
+                        "copyright": null,
+                        "url": "https://prismic-io.s3.amazonaws.com/tddb-website/3c08c85ffcb8eac361e02c0b597dd5216c804a95_auazfff.png"
+                      },
+                      "views": {
+                      }
+                    }
+                  }
+                }
+              ]
             },
-            "aspect-mobile": "1-1",
-            "aspect-desktop": "16-9"
-          },
-          {
-            "title": "Tile 1",
-            "text": "The first tile",
-            "width": "full",
-            "aspect-mobile": "16-9",
-            "aspect-desktop": "16-9"
-          },
-          {
-            "title": "Tile 2",
-            "text": "The second tile",
-            "background-style": "black"
-          },
-          {
-            "title": "Tile 3",
-            "text": "The third tile",
-            "background-style": "yellow"
-          },
-          {
-            "title": "Tile 4",
-            "text": "The fourth tile",
-            "background-fade": "grad",
-            "background-style": "yellow",
-            "aspect-mobile": "16-9",
-            "aspect-desktop": "16-9"
-          }
-        ]
-      },
-      "uid": "page-latest"
+            {
+              "type": "tiles",
+              "value": [
+                {
+                  "title": {
+                    "type": "Text",
+                    "value": "Tile 1"
+                  },
+                  "text": {
+                    "type": "Text",
+                    "value": "The first tile"
+                  }
+                },
+                {
+                  "title": {
+                    "type": "Text",
+                    "value": "Tile 2"
+                  },
+                  "text": {
+                    "type": "Text",
+                    "value": "The second tile"
+                  },
+                  "text-width": {
+                    "type": "Select",
+                    "value": "half"
+                  }
+                },
+                {
+                  "title": {
+                    "type": "Text",
+                    "value": "Tile 3"
+                  },
+                  "text": {
+                    "type": "Text",
+                    "value": "The third tile"
+                  },
+                  "width": {
+                    "type": "Select",
+                    "value": "half"
+                  }
+                },
+                {
+                  "title": {
+                    "type": "Text",
+                    "value": "Tile 4"
+                  },
+                  "text": {
+                    "type": "Text",
+                    "value": "The fourth tile"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   ]
 }
