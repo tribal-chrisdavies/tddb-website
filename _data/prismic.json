@@ -11,10 +11,6 @@
           "type": "Text",
           "value": "Everything from Tribal DDB Sydney."
         },
-        "footer": {
-          "type": "Select",
-          "value": "hidden"
-        },
         "sections": {
           "type": "SectionList",
           "value": [
