@@ -1,5 +1,5 @@
-git config --global user.email "chris.lim-davies@au.tribalworldwide.com"
-git config --global user.name "Chris Davies (CircleCI)"
+git config --global user.email "Technical@ddb.com.au"
+git config --global user.name "CircleCI AutoBuilder"
 
 ruby data_importer.rb
 git add .
