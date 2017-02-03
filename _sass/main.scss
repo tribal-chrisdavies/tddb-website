@@ -4,6 +4,12 @@
 @import "mixins/css3-mixins";
 
 @import "global";
-@import "components/header";
-@import "components/tile";
+
 @import "pages/latest";
+
+@import "components/tile";
+
+@import "sections/footer";
+@import "sections/header";
+@import "sections/promo";
+@import "sections/tiles";

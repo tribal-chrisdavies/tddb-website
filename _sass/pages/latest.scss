@@ -36,8 +36,6 @@
     }
   }
 
-  .tile-sizer { width: 50%; }
-
   .tile-comp {
     .tile-outer {
       @include transform(scale($tile-scale-norm) translate3d(0, 0, 0));

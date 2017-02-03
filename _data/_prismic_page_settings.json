@@ -101,7 +101,10 @@
                   "config" : {
                     "label" : "Content: Alignment",
                     "placeholder" : "left",
-                    "options" : [ "center", "right" ]
+                    "options" : [
+                      "center",
+                      "right"
+                    ]
                   }
                 },
                 "text-position" : {
@@ -109,7 +112,16 @@
                   "config" : {
                     "label" : "Content: Position",
                     "placeholder" : "top-left",
-                    "options" : [ "top-center", "top-right", "mid-left", "mid-center", "mid-right", "bot-left", "bot-center", "bot-right" ]
+                    "options" : [
+                      "top-center",
+                      "top-right",
+                      "mid-left",
+                      "mid-center",
+                      "mid-right",
+                      "bot-left",
+                      "bot-center",
+                      "bot-right"
+                    ]
                   }
                 },
                 "text-width" : {
@@ -117,7 +129,11 @@
                   "config" : {
                     "label" : "Content: Width",
                     "placeholder" : "full",
-                    "options" : [ "two-thirds", "half", "one-third" ]
+                    "options" : [
+                      "two-thirds",
+                      "half",
+                      "one-third"
+                    ]
                   }
                 },
                 "text-horizontal-padding" : {
@@ -143,23 +159,35 @@
                   "config" : {
                     "label" : "Tile: Width",
                     "placeholder" : "full",
-                    "options" : [ "half" ]
+                    "options" : [
+                      "half"
+                    ]
                   }
                 },
                 "aspect-mobile" : {
                   "type" : "Select",
                   "config" : {
                     "label" : "Tile: Aspect Ratio (Mobile)",
-                    "placeholder" : "4-3",
-                    "options" : [ "16-9", "1-1", "2-3", "fullscreen" ]
+                    "placeholder" : "fullscreen",
+                    "options" : [
+                      "1-1",
+                      "16-9",
+                      "4-3",
+                      "2-3"
+                    ]
                   }
                 },
                 "aspect-desktop" : {
                   "type" : "Select",
                   "config" : {
                     "label" : "Tile: Aspect Ratio (Desktop)",
-                    "placeholder" : "4-3",
-                    "options" : [ "16-9", "1-1", "2-3", "fullscreen" ]
+                    "placeholder" : "fullscreen",
+                    "options" : [
+                      "1-1",
+                      "16-9",
+                      "4-3",
+                      "2-3"
+                    ]
                   }
                 },
                 "background-image" : {
@@ -178,15 +206,21 @@
                   "config" : {
                     "label" : "Tile: Background Fade",
                     "placeholder" : "No fade",
-                    "options" : [ "solid", "grad" ]
+                    "options" : [
+                      "solid",
+                      "grad"
+                    ]
                   }
                 },
                 "background-style" : {
                   "type" : "Select",
                   "config" : {
                     "label" : "Tile: Background Style",
-                    "placeholder" : "Default style",
-                    "options" : [ "black", "yellow" ]
+                    "placeholder" : "No style",
+                    "options" : [
+                      "black",
+                      "yellow"
+                    ]
                   }
                 }
               }

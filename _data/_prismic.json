@@ -11,12 +11,12 @@
       "id": "WJFyQCcAAJ1wWd3r",
       "uid": "latest",
       "type": "page-latest",
-      "href": "https://tddb-website.prismic.io/api/documents/search?ref=WJLCWCcAAM6SX6an&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22WJFyQCcAAJ1wWd3r%22%29+%5D%5D",
+      "href": "https://tddb-website.prismic.io/api/documents/search?ref=WJPbOScAANWoZH1n&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22WJFyQCcAAJ1wWd3r%22%29+%5D%5D",
       "tags": [
 
       ],
       "first_publication_date": "2017-02-01T05:29:40+0000",
-      "last_publication_date": "2017-02-02T05:23:36+0000",
+      "last_publication_date": "2017-02-03T01:22:01+0000",
       "slugs": [
         "latest-from-tribal-ddb-sydney"
       ],
@@ -33,6 +33,10 @@
             "type": "Text",
             "value": "Everything from Tribal DDB Sydney."
           },
+          "footer": {
+            "type": "Select",
+            "value": "hidden"
+          },
           "sections": {
             "type": "SliceZone",
             "value": [
@@ -47,6 +51,12 @@
                       "heading": {
                         "type": "Text",
                         "value": "Thinking is DURR"
+                      },
+                      "background-video": {
+                        "type": "Link.web",
+                        "value": {
+                          "url": "http://content.volkswagen-commercial.com.au/Amarok/Content/videos/VW_The_Naked_Reveal_Loop.mp4"
+                        }
                       },
                       "background-image": {
                         "type": "Image",
