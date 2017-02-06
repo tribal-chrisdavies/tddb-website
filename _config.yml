@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: TDDB Test Website
-email: chris.lim-davies@au.tribalworldwide.com
+email: Technical@ddb.com.au
 description: > # this means to ignore newlines until "baseurl:"
   This is a test website for TDDB. It is merely for testing things.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -23,7 +23,6 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Build settings
 markdown: kramdown
 gems:
-  # - jekyll-prismic
 exclude:
   - Gemfile
   - Gemfile.lock

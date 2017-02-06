@@ -1,17 +1,12 @@
 ---
   layout: default
-  data: page-latest
 ---
 
-{% assign page_data = site.data.prismic[page.data][0].data %}
-{% for section in page_data.sections.value %}
-  {% case section.type %}
+<script>
+  window.location.replace("/latest");
+</script>
 
-    {% when "promo" %}
-      {% include sections/promo.html data=section.value %}
-
-    {% when "tiles" %}
-      {% include sections/tiles.html data=section.value %}
-
-  {% endcase %}
-{% endfor %}
+<ul>
+  <li><a href="/latest">Latest</a></li>
+  <li><a href="/people">People</a></li>
+</ul>

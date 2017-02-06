@@ -25,7 +25,9 @@
       "config" : {
         "label" : "Header Visibility",
         "placeholder" : "shown",
-        "options" : [ "hidden" ]
+        "options" : [
+          "hidden"
+        ]
       }
     },
     "footer" : {
@@ -33,7 +35,9 @@
       "config" : {
         "label" : "Footer Visibility",
         "placeholder" : "shown",
-        "options" : [ "hidden" ]
+        "options" : [
+          "hidden"
+        ]
       }
     }
   },

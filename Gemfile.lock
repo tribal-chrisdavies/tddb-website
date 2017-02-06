@@ -71,11 +71,10 @@ GEM
       octokit (~> 4.0)
       public_suffix (~> 2.0)
       typhoeus (~> 0.7)
-    hashery (2.1.2)
     html-pipeline (2.5.0)
       activesupport (>= 2)
       nokogiri (>= 1.4)
-    i18n (0.7.0)
+    i18n (0.8.0)
     jekyll (3.3.1)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -173,8 +172,6 @@ GEM
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
-    prismic.io (1.4.3)
-      hashery (~> 2.1.1)
     public_suffix (2.0.5)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
@@ -198,8 +195,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages (>= 78)
-  prismic.io
+  github-pages
 
 RUBY VERSION
    ruby 2.3.3p222
