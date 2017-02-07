@@ -14,4 +14,4 @@ test:
 general:
   branches:
     only:
-      - master
+      - gh-pages-ci
