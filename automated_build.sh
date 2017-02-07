@@ -2,25 +2,26 @@
 git config --global user.email "Technical@ddb.com.au"
 git config --global user.name "CircleCI AutoBuilder"
 
+# Import data and then build the project
+ruby data_importer.rb
+bundle exec jekyll build --trace
+
+# Copy _site/* files to a temp location
+mv _site /tmp/
+
 # Change to MASTER branch with a clean copy
+git reset --hard
 git checkout -f
 git checkout master
 git fetch origin master
 git reset --hard origin/master
 
-# Merge GH-PAGES-CI branch into master
-git merge gh-pages-ci
+# Copy built site into MASTER branch
+rm -rf * .bundle .sass-cache
+mv /tmp/_site/* .
 
 # Update data
 bundle install
-ruby data_importer.rb
-bundle exec jekyll build --trace
-
-# Get _site/* files and push them to MASTER branch
-# Note: CircleCI creates vendor and .bundle files
-mv _site /tmp/
-rm -rf * .bundle .sass-cache
-mv /tmp/_site/* .
 
 # Commit changes
 git add -A .
