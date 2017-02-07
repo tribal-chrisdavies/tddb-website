@@ -640,7 +640,7 @@
           "value": [
             {
               "type": "paragraph",
-              "text": "fdgsdfgsdfgsdfgsdfg",
+              "text": "abc<br/>abc\\nabc/nabc",
               "spans": [
 
               ]
