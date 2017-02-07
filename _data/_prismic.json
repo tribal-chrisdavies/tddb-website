@@ -9,15 +9,17 @@
   "results": [
     {
       "id": "WJkTACgAAN47fzlS",
-      "uid": "page-work",
+      "uid": "work",
       "type": "page-work",
-      "href": "https://tddb-website.prismic.io/api/documents/search?ref=WJkTFygAALxIfzm8&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22WJkTACgAAN47fzlS%22%29+%5D%5D",
+      "href": "https://tddb-website.prismic.io/api/documents/search?ref=WJkWwygAAN47f0nt&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22WJkTACgAAN47fzlS%22%29+%5D%5D",
       "tags": [
 
       ],
       "first_publication_date": "2017-02-07T00:21:43+0000",
-      "last_publication_date": "2017-02-07T00:21:43+0000",
+      "last_publication_date": "2017-02-07T00:37:23+0000",
       "slugs": [
+        "work-from-tribal-ddb-sydney",
+        "work-from-tribal-ddb",
         "work"
       ],
       "linked_documents": [
@@ -34,7 +36,7 @@
         "page-work": {
           "title": {
             "type": "Text",
-            "value": "Work"
+            "value": "Work from Tribal DDB Sydney"
           },
           "description": {
             "type": "Text",
@@ -221,7 +223,7 @@
       "id": "WJFyQCcAAJ1wWd3r",
       "uid": "latest",
       "type": "page-latest",
-      "href": "https://tddb-website.prismic.io/api/documents/search?ref=WJkTFygAALxIfzm8&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22WJFyQCcAAJ1wWd3r%22%29+%5D%5D",
+      "href": "https://tddb-website.prismic.io/api/documents/search?ref=WJkWwygAAN47f0nt&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22WJFyQCcAAJ1wWd3r%22%29+%5D%5D",
       "tags": [
 
       ],

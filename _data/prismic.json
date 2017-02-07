@@ -1,11 +1,11 @@
 {
   "page-work": [
     {
-      "uid": "page-work",
+      "uid": "work",
       "data": {
         "title": {
           "type": "Text",
-          "value": "Work"
+          "value": "Work from Tribal DDB Sydney"
         },
         "description": {
           "type": "Text",
