@@ -6,6 +6,8 @@ GEM
     colorator (1.1.0)
     ffi (1.9.17)
     forwardable-extended (2.6.0)
+    htmlbeautifier (1.2.1)
+    htmlcompressor (0.3.1)
     jekyll (3.3.1)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -19,6 +21,10 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
+    jekyll-tidy (0.0.1)
+      htmlbeautifier
+      htmlcompressor
+      jekyll
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
     kramdown (1.13.2)
@@ -42,6 +48,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.3.1)
+  jekyll-tidy
 
 RUBY VERSION
    ruby 2.3.3p222

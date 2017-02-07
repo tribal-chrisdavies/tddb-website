@@ -1,31 +1,41 @@
 {% assign tile = include.data %}
-<div class="comp-tile
+
+{% capture capCompTile %}
   {% if tile.width.value %}
     width-{{ tile.width.value }}
   {% endif %}
-">
-  <div class="tile-outer
-    {% if tile.aspect-mobile.value %}
-      mobile-aspect-{{ tile.aspect-mobile.value }}
-    {% endif %}
-    {% if tile.aspect-desktop.value %}
-      desktop-aspect-{{ tile.aspect-desktop.value }}
-    {% endif %}
-    {% if tile.background-style.value %}
-      tile-style-{{ tile.background-style.value }}
-    {% endif %}
-    {% if tile.background-image.value %}
-      tile-bg
-    {% endif %}
-    "
-    {% if tile.background-image.value %}
-      style="background-image: url('https://{{ tile.background-image.value.main.url }}');"
-    {% endif %}
-    >
-    <div class="tile-inner
-      {% if tile.background-fade.value %}
-        tile-fade-{{ tile.background-fade.value }}
-      {% endif %}">
+{% endcapture %}
+
+{% capture capTileOuter %}
+  {% if tile.aspect-mobile.value %}
+    mobile-aspect-{{ tile.aspect-mobile.value }}
+  {% endif %}
+  {% if tile.aspect-desktop.value %}
+    desktop-aspect-{{ tile.aspect-desktop.value }}
+  {% endif %}
+  {% if tile.background-style.value %}
+    tile-style-{{ tile.background-style.value }}
+  {% endif %}
+  {% if tile.background-image.value %}
+    tile-bg
+  {% endif %}
+{% endcapture %}
+
+{% capture capTileOuterBg %}
+  {% if tile.background-image.value %}
+    style="background-image: url('https://{{ tile.background-image.value.main.url }}');"
+  {% endif %}
+{% endcapture %}
+
+{% capture capTileInner %}
+  {% if tile.background-fade.value %}
+    tile-fade-{{ tile.background-fade.value }}
+  {% endif %}
+{% endcapture %}
+
+<div class="{{ 'comp-tile' | append: capCompTile | normalize_whitespace }}">
+  <div class="{{ 'tile-outer' | append: capTileOuter | normalize_whitespace }}"{{ capTileOuterBg | normalize_whitespace }}>
+    <div class="{{ 'tile-inner' | append: capTileInner | normalize_whitespace }}">
       {% if tile.background-video.value %}
       <div class="tile-background">
         <video loop="" autoplay=""{% if tile.background-video-poster.value %} poster="https://{{ tile.background-video-poster.value }}"{% endif %}>

@@ -23,6 +23,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Build settings
 markdown: kramdown
 gems:
+  - jekyll-tidy
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -38,3 +39,6 @@ page_gen:
     name: uid
     dir: work
 page_gen-dirs: true
+jekyll_tidy:
+  exclude: []
+  compress_html: false
