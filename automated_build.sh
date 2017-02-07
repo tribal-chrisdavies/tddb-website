@@ -25,3 +25,6 @@ git add -A .
 CURDATE=$(TZ=":Australia/Sydney" date +'%r (%d-%m-%Y, %Z)')
 git commit -m "Automated CircleCI rebuild at $CURDATE."
 git push -f origin master
+
+# Checkout back into the GH-PAGES-CI branch
+git checkout gh-pages-ci
