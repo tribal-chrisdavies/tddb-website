@@ -8,6 +8,7 @@ bundle exec jekyll build --trace
 
 # Copy _site/* files to a temp location
 mv _site /tmp/
+mv readme.md /tmp/_site/
 
 # Change to MASTER branch with a clean copy
 git reset --hard
