@@ -8,7 +8,11 @@ git checkout master
 git fetch origin master
 git reset --hard origin/master
 
+# Merge GH-PAGES-CI branch into master
+git merge gh-pages-ci
+
 # Update data
+bundle install
 ruby data_importer.rb
 bundle exec jekyll build --trace
 
