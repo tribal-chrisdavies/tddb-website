@@ -20,9 +20,6 @@ git reset --hard origin/master
 rm -rf * .bundle .sass-cache
 mv /tmp/_site/* .
 
-# Update data
-bundle install
-
 # Commit changes
 git add -A .
 CURDATE=$(TZ=":Australia/Sydney" date +'%r (%d-%m-%Y, %Z)')
