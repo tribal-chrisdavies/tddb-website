@@ -1,2 +1,58 @@
 {
+  "page-latest": [
+    {
+      "uid": "latest",
+      "data": {
+        "title": {
+          "type": "Text",
+          "value": "Latest from Tribal DDB"
+        },
+        "description": {
+          "type": "Text",
+          "value": "The latest news from Tribal DDB."
+        },
+        "sections": {
+          "type": "SectionList",
+          "value": [
+            {
+              "type": "promo",
+              "value": [
+                {
+                  "heading": {
+                    "type": "Text",
+                    "value": "Feeling conquers thinking."
+                  },
+                  "background-video": {
+                    "type": "Link.web",
+                    "value": {
+                      "url": "http://content.volkswagen-commercial.com.au/Amarok/Content/videos/VW_The_Naked_Reveal_Loop.mp4"
+                    }
+                  },
+                  "background-style": {
+                    "type": "Select",
+                    "value": "black"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "page-work": [
+    {
+      "uid": "work",
+      "data": {
+        "title": {
+          "type": "Text",
+          "value": "Work from Tribal DDB"
+        },
+        "description": {
+          "type": "Text",
+          "value": "Work from Tribal DDB."
+        }
+      }
+    }
+  ]
 }
