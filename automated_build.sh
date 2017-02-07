@@ -10,6 +10,7 @@ git reset --hard origin/master
 
 # Update data
 ruby data_importer.rb
+bundle exec jekyll build --trace
 
 # Get _site/* files and push them to MASTER branch
 # Note: CircleCI creates vendor and .bundle files
